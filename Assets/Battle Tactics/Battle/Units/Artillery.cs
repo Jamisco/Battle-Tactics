@@ -20,9 +20,9 @@ namespace Assets.Battle_Tactics.Battle.Units
             float mp = multiplier[(int)ut];
 
             Image = image;
-            UnitName = "Tank" + "(" + ((int)ut).ToString() + ")";
+            UnitName = "Artillery" + "(" + ((int)ut + 1).ToString() + ")";
             // generate a random number for the unitId
-            UnitId = UnityEngine.Random.Range(1, 500).ToString() + " Tank";
+            UnitId = UnityEngine.Random.Range(1, 500).ToString() + " Artillery";
 
             AtkPoints = (int)Math.Floor(Attack * mp);
             HealthPoints = (int)Math.Floor(Health * mp);

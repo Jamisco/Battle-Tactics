@@ -20,7 +20,7 @@ namespace Assets.Battle_Tactics.Battle
             float mp = multiplier[(int)ut];
 
             Image = image;
-            UnitName = "Infantry" + "(" + ((int)ut).ToString() + ")";
+            UnitName = "Infantry" + "(" + ((int)ut + 1).ToString() + ")";
             // generate a random number for the unitId
             UnitId = UnityEngine.Random.Range(1, 500).ToString() + " Infantry";
 
