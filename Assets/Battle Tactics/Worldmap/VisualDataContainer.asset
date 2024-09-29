@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56e69e8561f66b4dba02e73b661b8f5, type: 3}
+  m_Name: VisualDataContainer
+  m_EditorClassIdentifier: 
+  MapObjects:
+  - {fileID: 2100000, guid: f625d4e2b87e66240b91ddfcc96c3226, type: 2}
+  - {fileID: -6465566751694194690, guid: 8572976dcba84e346be50d0e5cc139e2, type: 3}
+  - {fileID: -6465566751694194690, guid: 0d175323f2ef7ad428cc750307ca34a3, type: 3}
+  - {fileID: -6465566751694194690, guid: 32d1b43a74ad18a4aab6a322e2e40570, type: 3}
+  - {fileID: -6465566751694194690, guid: a6e7124c6dc0f5f408872401eee340f6, type: 3}
+  - {fileID: -6465566751694194690, guid: 1faa7b4e99a31f541b5f1b86dbeb80c6, type: 3}
+  - {fileID: 4800000, guid: 74149fb3b7f744a49a70ef8035a93b84, type: 3}
+  - {fileID: 4800000, guid: 7d5e2c415491f4645a5a13668fb595e5, type: 3}
+  - {fileID: 2100000, guid: d490cc2d643e42e46ac0e8c5491dbaeb, type: 2}
+  - {fileID: 2100000, guid: 5b39c10f3f99ee4458e7e5b10077b741, type: 2}
+  MapShaders: []
+  GridShapes:
+  - {fileID: 11400000, guid: cd9fdc9a35c156445babc5ca32cc6806, type: 2}
+  - {fileID: 11400000, guid: c00c4fea2af2cfb429605dd6fc801743, type: 2}
+  matchingGuids:
+  - 5b039597-e744-4386-8bf7-ca9bfd54e639
+  - 9084f706-1e02-4d31-8798-7873625ab4b4
+  - bf4322c6-016c-4d19-9aa5-25a30dcdb12d
+  - f7c360a5-a7f7-4fb8-87f0-7e73077b4708
+  - b89a712d-c17f-4d16-99a7-dd650b11dcc4
+  - 5240dc34-69ed-41d9-9b39-b801435dac98
+  - ac6fbf6c-138f-4c30-b0ea-bff2544cbdfa
+  - e657be1b-01cb-4e92-9e72-1775078c8905
+  - ce6077c5-77d6-4b33-b49e-01e3f29240ce
+  - d3eddee8-039a-49a8-85ab-1171d24137ab
+  - 389dbb3f-6f4d-4ba8-8203-42f75f9721f0
+  - 455b3278-375c-4d38-bd93-8d08f71599c0
+  visualObjects:
+  - obj: {fileID: 2100000, guid: f625d4e2b87e66240b91ddfcc96c3226, type: 2}
+    ObjectName: Lake (UnityEngine.Material)
+    GidString: 5b039597-e744-4386-8bf7-ca9bfd54e639
+  - obj: {fileID: -6465566751694194690, guid: 8572976dcba84e346be50d0e5cc139e2, type: 3}
+    ObjectName: Shader Graphs/TextureGenerator (UnityEngine.Shader)
+    GidString: 9084f706-1e02-4d31-8798-7873625ab4b4
+  - obj: {fileID: -6465566751694194690, guid: 0d175323f2ef7ad428cc750307ca34a3, type: 3}
+    ObjectName: Shader Graphs/Water (UnityEngine.Shader)
+    GidString: bf4322c6-016c-4d19-9aa5-25a30dcdb12d
+  - obj: {fileID: -6465566751694194690, guid: 32d1b43a74ad18a4aab6a322e2e40570, type: 3}
+    ObjectName: Shader Graphs/TestLava (UnityEngine.Shader)
+    GidString: f7c360a5-a7f7-4fb8-87f0-7e73077b4708
+  - obj: {fileID: -6465566751694194690, guid: a6e7124c6dc0f5f408872401eee340f6, type: 3}
+    ObjectName: Shader Graphs/SnowGenerator (UnityEngine.Shader)
+    GidString: b89a712d-c17f-4d16-99a7-dd650b11dcc4
+  - obj: {fileID: -6465566751694194690, guid: 1faa7b4e99a31f541b5f1b86dbeb80c6, type: 3}
+    ObjectName: Shader Graphs/TestTexture (UnityEngine.Shader)
+    GidString: 5240dc34-69ed-41d9-9b39-b801435dac98
+  - obj: {fileID: 4800000, guid: 74149fb3b7f744a49a70ef8035a93b84, type: 3}
+    ObjectName: GridMapMaker/ColorShader (UnityEngine.Shader)
+    GidString: ac6fbf6c-138f-4c30-b0ea-bff2544cbdfa
+  - obj: {fileID: 4800000, guid: 7d5e2c415491f4645a5a13668fb595e5, type: 3}
+    ObjectName: GridMapMaker/DefaultShader (UnityEngine.Shader)
+    GidString: e657be1b-01cb-4e92-9e72-1775078c8905
+  - obj: {fileID: 2100000, guid: d490cc2d643e42e46ac0e8c5491dbaeb, type: 2}
+    ObjectName: Ocean (UnityEngine.Material)
+    GidString: ce6077c5-77d6-4b33-b49e-01e3f29240ce
+  - obj: {fileID: 2100000, guid: 5b39c10f3f99ee4458e7e5b10077b741, type: 2}
+    ObjectName: Sea (UnityEngine.Material)
+    GidString: d3eddee8-039a-49a8-85ab-1171d24137ab
+  - obj: {fileID: 11400000, guid: cd9fdc9a35c156445babc5ca32cc6806, type: 2}
+    ObjectName: HexagonalShape (GridMapMaker.HexagonalShape)
+    GidString: 389dbb3f-6f4d-4ba8-8203-42f75f9721f0
+  - obj: {fileID: 11400000, guid: c00c4fea2af2cfb429605dd6fc801743, type: 2}
+    ObjectName: RectangularShape (GridMapMaker.RectangularShape)
+    GidString: 455b3278-375c-4d38-bd93-8d08f71599c0
+  allObjects:
+  - {fileID: 2100000, guid: f625d4e2b87e66240b91ddfcc96c3226, type: 2}
+  - {fileID: -6465566751694194690, guid: 8572976dcba84e346be50d0e5cc139e2, type: 3}
+  - {fileID: -6465566751694194690, guid: 0d175323f2ef7ad428cc750307ca34a3, type: 3}
+  - {fileID: -6465566751694194690, guid: 32d1b43a74ad18a4aab6a322e2e40570, type: 3}
+  - {fileID: -6465566751694194690, guid: a6e7124c6dc0f5f408872401eee340f6, type: 3}
+  - {fileID: -6465566751694194690, guid: 1faa7b4e99a31f541b5f1b86dbeb80c6, type: 3}
+  - {fileID: 4800000, guid: 74149fb3b7f744a49a70ef8035a93b84, type: 3}
+  - {fileID: 4800000, guid: 7d5e2c415491f4645a5a13668fb595e5, type: 3}
+  - {fileID: 2100000, guid: d490cc2d643e42e46ac0e8c5491dbaeb, type: 2}
+  - {fileID: 2100000, guid: 5b39c10f3f99ee4458e7e5b10077b741, type: 2}
+  - {fileID: 11400000, guid: cd9fdc9a35c156445babc5ca32cc6806, type: 2}
+  - {fileID: 11400000, guid: c00c4fea2af2cfb429605dd6fc801743, type: 2}
