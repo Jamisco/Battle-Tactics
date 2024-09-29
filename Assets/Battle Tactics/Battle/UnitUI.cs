@@ -29,6 +29,7 @@ namespace Assets.Battle_Tactics.Battle
         public void Initiliaze(UnitData data)
         {
             this.data = data;
+            this.name = data.UnitId;
 
             image.sprite = data.Image;
             unitName.text = data.UnitName;

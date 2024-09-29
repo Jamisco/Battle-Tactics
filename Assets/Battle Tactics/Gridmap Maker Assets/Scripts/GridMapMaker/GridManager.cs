@@ -997,7 +997,7 @@ namespace GridMapMaker
                 chunk.DrawLayer(layerId);
             }
 
-            SortMeshLayers();
+            //SortMeshLayers();
         }
 
         /// <summary>

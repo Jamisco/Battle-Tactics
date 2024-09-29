@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D;
 using Cinemachine;
+using Assets.Battle_Tactics.Worldmap.VisualDatas;
 
 [SerializeField]
 public class Worldmap : MonoBehaviour
@@ -19,11 +20,17 @@ public class Worldmap : MonoBehaviour
     [SerializeField]
     public MeshLayerSettings baseLayer;
 
+    [SerializeField]
+    public MeshLayerSettings highlightLayer;
+    public Material highlightMat;
+
     public bool instantUpdate = false;
 
     CinemachineVirtualCamera vCam;
     CinemachineConfiner2D cameraConfiner;
     PolygonCollider2D polyCollider;
+
+    HighlightVisualData highlightVData;
 
     public void Init()
     {
@@ -37,6 +44,8 @@ public class Worldmap : MonoBehaviour
 
         noiseGenerator.ComputeNoises(gridManager.GridSize);
         noiseGenerator.worldMap = this;
+
+        highlightVData = new HighlightVisualData(highlightMat);
     }
 
     public void ComputeNoise()
@@ -51,6 +60,35 @@ public class Worldmap : MonoBehaviour
         {
             GenerateGrid();
         }
+
+        HighlightMousePos();
+    }
+
+    bool working = false;
+    Vector2Int previousHigh = Vector2Int.left;
+    public void HighlightMousePos()
+    {
+        working = true;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2Int gridPos = gridManager.WorldToGridPosition(mousePos);
+
+        if (gridPos != previousHigh)
+        {
+            if(previousHigh != Vector2Int.left)
+            {
+                gridManager.DeletePosition(previousHigh, highlightLayer.LayerId);
+            }
+
+            gridManager.InsertVisualData(gridPos, highlightVData, highlightLayer.LayerId);
+            previousHigh = gridPos;
+
+            Debug.Log("Position: " + gridPos.ToString());
+        }
+
+        gridManager.RedrawLayer(highlightLayer.LayerId);
+
+        working = false;
     }
 
     public bool printTime = false;
@@ -70,6 +108,7 @@ public class Worldmap : MonoBehaviour
 
         gridManager.Initialize();
         gridManager.CreateLayer(baseLayer, true);
+        gridManager.CreateLayer(highlightLayer, false);
 
         Vector2Int pos;
         ShapeVisualData vData;

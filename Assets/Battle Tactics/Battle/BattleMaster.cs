@@ -11,7 +11,7 @@ using UnityEngine;
 namespace Assets.Battle_Tactics.Battle
 {
     [Serializable]
-    public class UnitSpawner : MonoBehaviour
+    public class BattleMaster : MonoBehaviour
     {
         public GridManager gridManager;
         public UnitCreator unitCreator;
@@ -27,31 +27,35 @@ namespace Assets.Battle_Tactics.Battle
             unitCreator = FindAnyObjectByType<UnitCreator>();
         }
 
-        public float zp = 0;
         public void SpawnUnit()
         {
             UnitData data = unitCreator.CreateUnit(UnitType.Infantry, UnitLevel.One);
 
             Vector3 position = gridManager.GridToWorldPostion(spawnLocation);
-            position.z += zp;
+            position.z += -.1f;
             UnitUI unitUI = Instantiate(prefab, UnitCanvas.transform);
+            unitUI.Initiliaze(data);
 
             RectTransform rect = unitUI.GetComponent<RectTransform>();
 
             rect.position = position;
         }
+        public void Update()
+        {
+            
+        }
     }
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(UnitSpawner))]
-public class UnitSpawnerEditor : Editor
+[CustomEditor(typeof(BattleMaster))]
+public class BattleMasterEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        UnitSpawner exampleScript = (UnitSpawner)target;
+        BattleMaster exampleScript = (BattleMaster)target;
 
         if (GUILayout.Button("Init Grid"))
         {

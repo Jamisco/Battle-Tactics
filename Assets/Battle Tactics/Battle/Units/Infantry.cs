@@ -14,7 +14,7 @@ namespace Assets.Battle_Tactics.Battle
         public const int Readiness = 100;
         public const int Movement = 2;
 
-        float[] multiplier = { 1.10f, 1.3f, 1.6f };
+        float[] multiplier = { 1.0f, 1.3f, 1.6f };
         public Infantry(UnitLevel ut, Sprite image)
         {
             float mp = multiplier[(int)ut];
