@@ -836,13 +836,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7881835055717692568}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.02349341, g: 1, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 1, g: 0, b: 0.70298386, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
 --- !u!114 &2843234642115033089
 MonoBehaviour:
@@ -865,6 +865,7 @@ MonoBehaviour:
   movementPoints: {fileID: 612079011980985801}
   UIOutline: {fileID: 2141078331212514926}
   unitLvl: 0
+  currentPos: {x: 0, y: 0}
 --- !u!1 &9013356263683815720
 GameObject:
   m_ObjectHideFlags: 0

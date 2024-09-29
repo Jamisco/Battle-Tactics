@@ -1,10 +1,10 @@
-﻿using Assets.Worldmap.VisualDatas;
+﻿using Assets.World.VisualDatas;
 using GridMapMaker;
 using System;
 using UnityEngine;
 
 
-namespace Assets.Battle_Tactics.Worldmap.VisualDatas
+namespace Assets.Battle_Tactics.World.VisualDatas
 {
     internal class HighlightVisualData : ShapeVisualData
     {

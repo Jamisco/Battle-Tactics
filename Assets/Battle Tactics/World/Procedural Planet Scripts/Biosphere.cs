@@ -1,5 +1,6 @@
-﻿using Assets.Worldmap;
-using Assets.Worldmap.VisualDatas;
+﻿using Assets.Battle_Tactics.World.VisualDatas;
+using Assets.World;
+using Assets.World.VisualDatas;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +19,7 @@ namespace GridMapMaker.Tutorial
 
         Dictionary<Vector2Int, ShapeVisualData> snowBiomeData = new Dictionary<Vector2Int, ShapeVisualData>();
 
-        WaterVisualData waterVData;
+        LavaVisualData lavaVData;
 
         public void SetBiomeData(ref NoiseGenerator noiseGen, Vector2Int planetSize)
         {
@@ -28,7 +29,7 @@ namespace GridMapMaker.Tutorial
             snowBiomeData.Clear();
             usedSnowVData.Clear();
 
-            waterVData = new WaterVisualData(lProps.waterMaterial);
+            lavaVData = new LavaVisualData(lProps.lavaMaterial);
 
             Vector2Int pos;
 
@@ -54,13 +55,13 @@ namespace GridMapMaker.Tutorial
         {
             Landscape ls;
 
-            if (land > lProps.waterHeight)
+            if (land > lProps.lavaHeight)
             {
                 ls = Landscape.Land;
             }
             else
             {
-                ls = Landscape.Water;
+                ls = Landscape.Lava;
             }
 
             switch (ls)
@@ -88,8 +89,8 @@ namespace GridMapMaker.Tutorial
 
                     return v;
 
-                case Landscape.Water:
-                    return waterVData;
+                case Landscape.Lava:
+                    return lavaVData;
                 default:
                     return null;
             }
@@ -117,15 +118,15 @@ namespace GridMapMaker.Tutorial
         public enum Landscape
         {
             Land,
-            Water
+            Lava
         }
 
         [Serializable]
         public struct LandscapeProperties
         {
-            public float waterHeight;
+            public float lavaHeight;
             public Shader textureGenerator;
-            public Material waterMaterial;
+            public Material lavaMaterial;
         }
 
 #if UNITY_EDITOR

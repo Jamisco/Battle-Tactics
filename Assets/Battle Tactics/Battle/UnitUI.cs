@@ -49,6 +49,15 @@ namespace Assets.Battle_Tactics.Battle
             movementPoints.text = data.MovementPoints.ToString();
         }
 
+        public Vector2Int currentPos;
+
+        public void MoveToPosition(Vector3 position)
+        {
+            RectTransform rect = transform.GetComponent<RectTransform>();
+
+            rect.position = position;
+        }
+
         public void EnableOutline()
         {
             UIOutline.enabled = true;

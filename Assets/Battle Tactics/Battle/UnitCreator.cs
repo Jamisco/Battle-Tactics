@@ -14,12 +14,26 @@ namespace Assets.Battle_Tactics.Battle
         Tank,
         Artillery
     }
+    public enum ArmyColor
+    {
+        Green,
+        Yellow
+    }
+
     [Serializable]
     public class UnitCreator : MonoBehaviour
     {
-        public FullUnitData Infantry;
-        public FullUnitData Tank;
-        public FullUnitData Artillery;
+        public ArmyData greenArmy;
+        public ArmyData yellowArmy;
+
+        [Serializable]
+        public struct ArmyData
+        {
+            public ArmyColor armyColor;
+            public FullUnitData Infantry;
+            public FullUnitData Tank;
+            public FullUnitData Artillery;
+        }
 
         [Serializable]
         public struct FullUnitData
@@ -28,26 +42,37 @@ namespace Assets.Battle_Tactics.Battle
             public Sprite[] Images;
         }
 
-        public UnitData CreateUnit(UnitType ut, UnitLevel lvl)
+        public UnitData CreateUnit(ArmyColor ac, UnitType ut, UnitLevel lvl)
         {
             UnitData unitData = null;
             Sprite sprite;
 
+            ArmyData d;
+
+            if(ac == ArmyColor.Green)
+            {
+                d = greenArmy;
+            }
+            else
+            {
+                d = yellowArmy;
+            }
+
             switch (ut)
             {
                 case UnitType.Infantry:
-                    sprite = Infantry.Images[(int)lvl];
+                    sprite = d.Infantry.Images[(int)lvl];
 
                     unitData = new Infantry(lvl, sprite);
 
                     break;
                 case UnitType.Tank:
-                    sprite = Infantry.Images[(int)lvl];
+                    sprite = d.Tank.Images[(int)lvl];
 
                     unitData = new Tank(lvl, sprite);
                     break;
                 case UnitType.Artillery:
-                    sprite = Infantry.Images[(int)lvl];
+                    sprite = d.Artillery.Images[(int)lvl];
 
                     unitData = new Artillery(lvl, sprite);
                     break;

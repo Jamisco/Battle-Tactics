@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Worldmap.VisualDatas
+namespace Assets.World.VisualDatas
 {
     [Serializable]
     public class LandVisualData : ShapeVisualData
